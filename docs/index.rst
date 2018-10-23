@@ -13,5 +13,6 @@ Contents:
    :glob:
 
    *
-   tricks/index.rst
-
+   databases/*
+   tricks/index
+   reStructedText/index
