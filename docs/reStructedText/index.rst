@@ -8,5 +8,6 @@ rst 文件语法
 
 .. toctree::
    :maxdepth: 1
-   
+   :glob:
+
    *
