@@ -15,4 +15,4 @@ Contents:
    *
    databases/*
    tricks/index
-   reStructedText/index
+   reStructedText/index.rst
