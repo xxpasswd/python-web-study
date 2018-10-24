@@ -3,17 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-python web 学习指南
+python web框架
 ==================================================
-
-Contents:
 
 .. toctree::
    :maxdepth: 2
    :glob:
-
+   
    *
-   databases/*
-   framework/index
-   tricks/index
-   reStructedText/index.rst
