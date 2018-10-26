@@ -3,18 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-python web 学习指南
+个人python笔记
 ==================================================
-
-Contents:
 
 .. toctree::
    :maxdepth: 2
    :glob:
-
+   
    *
-   databases/*
-   framework/index
-   python_cheat/index
-   tricks/index
-   reStructedText/index.rst
