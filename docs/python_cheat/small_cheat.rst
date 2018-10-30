@@ -1,0 +1,17 @@
+python 函数传值
+===================
+
+- 如果需要传递多个非关键字参数（元组，列表的形式），可以使用*args
+- 如果需要传递多个关键字参数（使用字典的形式表示），可以使用**kwargs
+
+.. code::
+
+    args = ['cc','dd']
+    kwargs ={'aa':'cc','bb':'dd'}
+
+    def fun(aa,bb):
+        print(aa)
+        print(bb)
+
+    fun(*args)
+    fun(**kwargs)
