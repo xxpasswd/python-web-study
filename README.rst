@@ -1,7 +1,5 @@
 python web学习说明
 ============
 
-这个项目是一个关于python web学习的指南
+这个项目是一个关于本人在python web学习中的一些记录
 
-
-包含python web学习的各个方面
