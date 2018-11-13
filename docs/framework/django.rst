@@ -27,3 +27,26 @@ home.html的核心代码
     var List = {{ List|safe }};
     //字典
     var Dict = {{ Dict|safe }};
+
+
+在其他模块中使用django
+-------------------
+
+需要将django的设置导入
+
+.. code::
+    import django
+
+    MODE = 'settings_test'
+    if len(sys.argv) > 1:
+        if sys.argv[1] == 'test':
+            MODE = 'settings_test'
+        elif sys.argv[1] == 'pro':
+            MODE = 'settings_pro'
+        else:
+            MODE = 'settings'
+
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "SystemRunning.%s" % MODE)
+
+    if django.VERSION >= (1, 7):
+        django.setup()
