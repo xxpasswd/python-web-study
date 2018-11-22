@@ -15,3 +15,10 @@ python 函数传值
 
     fun(*args)
     fun(**kwargs)
+
+
+python 执行系统程序
+=======================
+
+- subprocess.run('command')
+- subprocess.Popen(['command'])  后台执行，不会阻塞主程序，主程序退出不影响
