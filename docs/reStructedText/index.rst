@@ -6,8 +6,4 @@
 rst 文件语法
 ==================================================
 
-.. toctree::
-   :maxdepth: 1
-   :glob:
-
-   *
+rst文件语法，请参考我的这篇文章 `reStructuredText文件语法简单学习 <https://www.cnblogs.com/time-read/p/10006121.html>`_
