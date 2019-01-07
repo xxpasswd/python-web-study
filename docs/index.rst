@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-python web 学习指南
+python web 学习总结
 ==================================================
 
 Contents:
