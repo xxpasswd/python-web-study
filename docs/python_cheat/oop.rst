@@ -7,6 +7,7 @@ python 面向对象编程
 当需要导入一个全局的类时，其他模块导入的这个类时时候，便会执行
 
 .. code::
+
     database.py
 
     class DB:
@@ -23,6 +24,7 @@ python 面向对象编程
 我们可以通过写一个初始化方法，需要实例化时，在执行初始化方法
 
 .. code::
+
     database.py
 
     class DB:
@@ -48,12 +50,14 @@ python 面向对象编程
 定义在python类里面，供所有类使用的变量为类变量
 
 .. code::
+
     class MyClass:
         a = [] # a为一个类变量
 
 上面的a为一个类变量，所有通过此类实例化的对象，都共享此变量
 
 .. code::
+
     first = MyClass()
     second = MyClass()
     first.a.append(1)
