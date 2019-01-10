@@ -17,8 +17,8 @@ Contents:
 
    *
    databases/*
-   framework/index
    python_cheat/index
+   framework/index
    tricks/index
    reStructedText/index.rst
    front_end/index
