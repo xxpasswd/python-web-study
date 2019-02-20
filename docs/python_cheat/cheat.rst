@@ -80,4 +80,17 @@ Formatters
 django逻辑运算符的优先级
 --------------------------
 
-or>and>not
+not>and>or
+
+
+python sqlalchemy
+==================
+
+sqlalchemy中的三个重要对象
+
+1. engine 引擎，它代表了数据库的核心接口
+
+2. declare 声明，它定义类映射到数据库的表中
+
+3. session 会话，它是orm操作数据库的处理器
+
