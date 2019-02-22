@@ -77,11 +77,6 @@ Formatters
 
 是线程安全的，但不是进程安全的
 
-django逻辑运算符的优先级
---------------------------
-
-not>and>or
-
 
 python sqlalchemy
 ==================
@@ -94,3 +89,45 @@ sqlalchemy中的三个重要对象
 
 3. session 会话，它是orm操作数据库的处理器
 
+
+python 循环导入
+=================
+
+python导入包时，已经执行的语句就不会在执行，导入和执行是不同的，执行后该模块后，
+还可以从其他模块中，导入执行一次，该模块总共就执行了两次
+
+.. code::
+
+    **a.py**
+
+    from b import d
+    c = 'value c'
+    print(d)
+
+    **b.py**
+
+    from a import c
+    d = 'value d'
+    print(c)
+
+在a中导入b模块的属性，在b中导入a模块属性，造成两个都没有完全导入，从而找不到属性
+
+可以使用底部导入的方式解决问题（即使用一个属性时，必须使包含属性的代码已经运行）
+
+.. code::
+
+    **a.py**
+  
+    c = 'value c'
+    from b import d  # 将d导入移到属性c执行前
+    print(d)
+
+    **b.py**
+
+    from a import c
+    d = 'value d'
+    print(c)
+
+将d导入移到属性c执行前，这样在b中导入属性c时，就能够找到。
+
+**python导入包中的模块时，首先会执行__init__.py文件里面东西**
