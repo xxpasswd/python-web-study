@@ -61,24 +61,26 @@ apache2配置
 .. code::
 
     #!/bin/bash
-    cat >> /usr/local/apache2/conf/httpd.conf <<EOF
-    ServerName localhost:80
-    LoadModule wsgi_module modules/mod_wsgi.so
-    AddType text/html .py
-    WSGIScriptAlias / /data/BillingManagementSystem/BillingManagementSystem/wsgi_k8s_test.py
-    WSGIPythonPath /data/BillingManagementSystem/BillingManagementSystem/
-    <Directory /data/BillingManagementSystem/BillingManagementSystem>
+    cat >> /etc/apache2/sites-available/sitename.conf <<EOF
+    <VirtualHost *:80>
+        Alias /static/ /data/BillingManagementSystem/BillingManagementSystem/static/
+
+        <Directory /data/BillingManagementSystem/BillingManagementSystem/static/>
+            Require all granted
+        </Directory>
+
+        WSGIScriptAlias / /data/BillingManagementSystem/BillingManagementSystem/wsgi_k8s_test.py
+        <Directory /data/BillingManagementSystem/BillingManagementSystem/>
         <Files wsgi_k8s_test.py>
             Require all granted
         </Files>
-    </Directory>
-    Alias /static/ /data/BillingManagementSystem/BillingManagementSystem/static/
-    <Directory /data/BillingManagementSystem/BillingManagementSystem/static>
-        Require all granted
-    </Directory>
+        </Directory>
+    </VirtualHost>
     EOF
     chmod -R 777 /data/BillingManagementSystem/logs
-    service httpd start
-    tail -f  /usr/local/apache2/logs/error_log
-
+    cd /etc/apache2/sites-available &&
+    a2ensite sitename.conf &&
+    a2dissite 000-default.conf
+    service apache2 start
+    tail -f  /var/log/apache2/error.log
 
