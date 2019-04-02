@@ -6,7 +6,7 @@
 python web 学习总结
 ==================================================
 
-在不断的学习过程种，不断的积累。
+在不断的学习过程中，不断的积累。
 
 
 Contents:
@@ -22,3 +22,4 @@ Contents:
    tricks/index
    reStructedText/index.rst
    front_end/index
+   intervieweer/*
