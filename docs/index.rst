@@ -3,10 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-python web 学习总结
+python web 学习指南
 ==================================================
 
-在不断的学习过程中，不断的积累。
+本文是笔者在学习过程中，结合笔者的学习经验和网上的文章总结出来的一份python学习指南
 
 
 Contents:
