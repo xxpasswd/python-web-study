@@ -22,4 +22,5 @@ Contents:
    tricks/index
    reStructedText/index.rst
    front_end/index
+   deploy/*
    intervieweer/*
