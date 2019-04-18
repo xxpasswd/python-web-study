@@ -16,10 +16,22 @@ web部署框架
 web应用部署
 ------------
 
-1. web服务器配置
+
+
+1. 数据库配置
 +++++++++++++
 
-usgi.ini配置
+更改配置文件，bind_address
+
+刷新数据库权限
+
+在django代码里面配置读写数据库
+
+
+2. web服务器配置
++++++++++++++
+
+uwsgi.ini配置
 
     .. code::
 
@@ -34,13 +46,48 @@ usgi.ini配置
     max-requests = 5000
     vacuum = True
     pid_file = order.pid
+    daemonize = /project/uwsgi.log
     EOF
 
+    # 启动命令
     uwsgi --ini uwsgi.ini
 
-2. 数据库配置
+    # 停止命令
+    uwsgi --stop order.pid
 
-在django代码里面配置读写数据库
+3. nginx配置
++++++++++++++
+
+nginx配置   /etc/nginx/nginx.conf
+
+.. code::
+
+    http {
+
+        ...
+
+        upstream uwsgi {
+                    server 127.0.0.1:8000;
+            }
+
+        server {
+                listen 80;
+                charset utf-8;
+
+                location / {
+                        proxy_pass http://uwsgi;
+                        }
+
+                location /static {
+                        alias /data/gic-order/order/staticfiles/;
+                        }
+        }
+    }
+
+    # 启动命令
+    service nginx restart
+    nginx -s reload
+    
 
 
 定时任务部署
