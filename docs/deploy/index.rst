@@ -33,7 +33,7 @@ web应用部署
 
 uwsgi.ini配置
 
-    .. code::
+.. code::
 
     cat >>uwsgi.ini<<EOF
     [uwsgi]
@@ -87,6 +87,36 @@ nginx配置   /etc/nginx/nginx.conf
     # 启动命令
     service nginx restart
     nginx -s reload
+
+**nginx搭建高可用服务器**
+
+反向代理两个服务器，当一个服务发生故障时，还可以使用另一个服务器
+
+.. code::
+
+    http {
+
+        ...
+
+        upstream uwsgi {
+                    # 反向代理两个服务器
+                    server 127.0.0.1:8000;
+                    server 127.0.0.1:8001;
+            }
+
+        server {
+                listen 80;
+                charset utf-8;
+
+                location / {
+                        proxy_pass http://uwsgi;
+                        }
+
+                location /static {
+                        alias /data/gic-order/order/staticfiles/;
+                        }
+        }
+    }
     
 
 
@@ -136,6 +166,7 @@ docker 配置文件
     RUN pip install -r /tmp/requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ \
     && apt-get update \
     && apt-get install -y cron \
+    && apt-get install -y nginx \
     && ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
     COPY . /data/gic-order
