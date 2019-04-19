@@ -163,8 +163,8 @@ docker 配置文件
     # 安装依赖
     COPY .requirements.txt /tmp
 
-    RUN pip install -r /tmp/requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ \
-    && apt-get update \
+    RUN pip install -r /tmp/requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ 
+    RUN apt-get update \
     && apt-get install -y cron \
     && apt-get install -y nginx \
     && ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
