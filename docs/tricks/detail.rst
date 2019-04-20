@@ -12,7 +12,7 @@ ssh 客户端配置文件
     HostName 主机地址
     User 登陆用户名
     Port 端口号
-    IdentityFile 公钥路径
+    IdentityFile 私钥路径
 
 在 ~/.ssh/目录下创建一个config文件，在config写入相应的配置后，就可以使用 ssh <主机别名>访问服务器了
 
@@ -53,3 +53,11 @@ supervisor安装：
 .. code::
 
     supervisord -c /etc/supervisord_conf
+
+
+windows Host配置
+-----------------
+
+文件位置：C:\Windows\System32\drivers\etc
+
+刷新host：ipconfig /flushdns

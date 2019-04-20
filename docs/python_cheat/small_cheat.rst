@@ -20,8 +20,12 @@ python 函数传值
 python 执行系统程序
 =======================
 
-- subprocess.run('command')
-- subprocess.Popen(['command'])  后台执行，不会阻塞主程序，主程序退出不影响
+.. code::
+
+    subprocess.run('command')
+    subprocess.run(['command','parameter'], cwd='/root')
+
+    subprocess.Popen(['command'])  后台执行，不会阻塞主程序，主程序退出不影响
 
 
 django逻辑运算符的优先级
