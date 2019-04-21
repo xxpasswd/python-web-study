@@ -21,11 +21,16 @@ web应用部署
 1. 数据库配置
 +++++++++++++
 
-更改配置文件，bind_address
+1. ubuntu安装mysql  apt-get update; apt-get install mysql-server
+2. 更改配置文件/etc/mysql/mysql.conf.d/mysqld.cnf  的参数 bind_address
+3. 刷新数据库权限
+4. 在django代码里面配置读写数据库
 
-刷新数据库权限
+mysql启动出错解决方案
 
-在django代码里面配置读写数据库
+.. code::
+    usermod -d /var/lib/mysql/ mysql
+    chown -R mysql:mysql /var/lib/mysql /var/run/mysqld
 
 
 2. web服务器配置
