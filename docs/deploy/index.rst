@@ -29,6 +29,7 @@ web应用部署
 mysql启动出错解决方案
 
 .. code::
+
     usermod -d /var/lib/mysql/ mysql
     chown -R mysql:mysql /var/lib/mysql /var/run/mysqld
 
