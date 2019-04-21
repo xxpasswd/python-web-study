@@ -33,6 +33,14 @@ mysql启动出错解决方案
     usermod -d /var/lib/mysql/ mysql
     chown -R mysql:mysql /var/lib/mysql /var/run/mysqld
 
+mysql连接错误
+
+.. code::
+
+    # 进入mysql终端
+    GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%' IDENTIFIED BY 'mypassword' WITH GRANT OPTION;
+    FLUSH   PRIVILEGES;
+
 
 2. web服务器配置
 +++++++++++++
