@@ -50,3 +50,18 @@ django 数据库事物处理时，值没有存储
 **注意：** 在整个事物里面，model的值是还没有存储的，第一次取出一个model，修改了一部分
 值并保存，第二次又取出同一个model，这时候的值就成了原先model的值，存储的时候，不能全部存储
 所有的字段，会把第一次修改的值覆盖掉
+
+
+查看django的sql语句和消耗时间
+-------------------------
+
+.. code::
+
+    # 查看sql语句
+    app = App.objects.all()
+    print(app.query)
+
+    # 查看消耗时间
+    from django.db import connection, connections
+    print(connection.queries)
+    print(connections['slave'].queries) # 查看其他数据库连接的语句
