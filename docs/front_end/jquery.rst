@@ -44,3 +44,13 @@ jQuery 事件，监听某个组件，当发生事件时，执行代码
     $("#delete-whitelist").click(function() {
         $("#delete-form").submit();
     });
+
+
+为多个id相同的组件注册事件
+
+.. code::
+
+    $("[id=delete]").click(function () {
+        var delete_customer_id = $(this).attr('data-id');
+        $("#delete-ids").val([delete_customer_id]);
+    });
