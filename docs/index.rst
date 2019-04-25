@@ -24,3 +24,4 @@ Contents:
    front_end/index
    deploy/*
    intervieweer/*
+   traps/*
