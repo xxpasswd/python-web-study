@@ -94,17 +94,17 @@ python 循环导入
 =================
 
 python导入包时，已经执行的语句就不会在执行，导入和执行是不同的，执行后该模块后，
-还可以从其他模块中，导入执行一次，该模块总共就执行了两次
+还可以从其他模块中继续导入该模块，该模块会执行一次，这样该模块总共执行了两次
 
 .. code::
 
-    **a.py**
+    # a.py
 
     from b import d
     c = 'value c'
     print(d)
 
-    **b.py**
+    # b.py
 
     from a import c
     d = 'value d'
@@ -116,13 +116,13 @@ python导入包时，已经执行的语句就不会在执行，导入和执行�
 
 .. code::
 
-    **a.py**
+    # a.py
   
     c = 'value c'
     from b import d  # 将d导入移到属性c执行前
     print(d)
 
-    **b.py**
+    # b.py
 
     from a import c
     d = 'value d'
