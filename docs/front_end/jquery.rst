@@ -54,3 +54,14 @@ jQuery 事件，监听某个组件，当发生事件时，执行代码
         var delete_customer_id = $(this).attr('data-id');
         $("#delete-ids").val([delete_customer_id]);
     });
+
+
+给动态添加的元素添加事件
+
+若元素是动态生成的，原先在元素上直接注册的事件不会有效果，需要使用这种方法
+
+.. code::
+
+    $(document).on('click', '#my-id',  function () {
+        alert('aa')
+    });
