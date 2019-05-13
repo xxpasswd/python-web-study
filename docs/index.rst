@@ -16,12 +16,12 @@ Contents:
    :glob:
 
    *
+   front_end/index
    databases/*
-   python_cheat/index
    framework/index
    tricks/index
-   reStructedText/index.rst
-   front_end/index
    deploy/*
-   intervieweer/*
+   python_cheat/index
    traps/*
+   intervieweer/*
+   reStructedText/index.rst

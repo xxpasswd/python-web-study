@@ -150,3 +150,11 @@ BTREE索引和HASH索引
 - HASH索引不能确定两个值之间有多少行
 - HASH索引只能用整个关键字来搜索一行
 - 而对于BTREE索引，当使用>,<,>=,<=,BETWEEN,!=,<>和LIKE操作符时都能使用上
+
+
+mysql 问题解决
++++++++++++++++
+
+1. 出现锁等待
+
+select * from information_schema.innodb_trx
