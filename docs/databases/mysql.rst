@@ -152,9 +152,18 @@ BTREE索引和HASH索引
 - 而对于BTREE索引，当使用>,<,>=,<=,BETWEEN,!=,<>和LIKE操作符时都能使用上
 
 
+mysql死锁问题
+++++++++++++++
+
+笔者在实际工作中，发现数据库发生死锁是一个很常见的问题
+找到了一篇解锁死锁的文章，写的还不错，解决了我大部分疑惑
+`死锁分析 <https://www.aneasystone.com/archives/2017/12/solving-dead-locks-three.html>`_
+
+
 mysql 问题解决
 +++++++++++++++
 
 1. 出现锁等待
 
 select * from information_schema.innodb_trx
+
