@@ -1,6 +1,8 @@
 应用部署
 ===============
 
+`nginx+uwsgi+django<https://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html>`_
+
 web部署框架
 
 |web|
